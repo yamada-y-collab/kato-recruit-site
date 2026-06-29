@@ -1857,6 +1857,34 @@ img { max-width: 100%; height: auto; display: block; }
   .contact { padding: 80px 24px; }
   .footer { padding: 48px 24px 24px; }
 }
+
+/* ============================
+   Movie (採用動画 / YouTube)
+   ============================ */
+.movie-frame {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(42, 29, 72, 0.18);
+  background: var(--purple-deep);
+}
+.movie-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.movie-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple-dark));
+}
+.movie-placeholder-icon {
+  width: 66px; height: 66px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: var(--white); padding-left: 4px;
+}
+.movie-placeholder-text { font-size: 14px; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.85); }
 </style>
 </head>
 <body>
@@ -1869,6 +1897,7 @@ img { max-width: 100%; height: auto; display: block; }
     </a>
     <nav class="header-nav">
       <a href="#message">ごあいさつ</a>
+      <a href="#movie">動画</a>
       <a href="#tech">働く環境</a>
       <a href="#recruit">募集職種</a>
       <a href="#instagram">Instagram</a>
@@ -1928,6 +1957,29 @@ img { max-width: 100%; height: auto; display: block; }
       <div class="kpi-label">SUPPORT</div>
       <div class="kpi-value">事務<span class="unit">効率化</span><span class="small">日報・請求・写真管理の<br>負担を軽減</span></div>
     </div>
+  </div>
+</section>
+
+<section class="section movie" id="movie">
+  <div class="section-inner">
+    <span class="section-label">MOVIE &nbsp;/&nbsp; 動画で見る</span>
+    <h2 class="section-title reveal">2分で伝わる、<br>この仕事と、<strong>働く人</strong>。</h2>
+    <p class="section-lead reveal">社長と現場スタッフ・佐藤の対談で、仕事のリアルな雰囲気をお届けします。</p>
+
+    <!-- ▼ 採用動画の埋め込み欄。動画公開後は、下の <div class="movie-frame movie-frame--placeholder"> ブロックを、
+         さらに下のコメント内の <iframe> 版に差し替えてください（YOUTUBE_VIDEO_ID を実際の動画IDに置換）。 -->
+    <div class="movie-frame movie-frame--placeholder reveal">
+      <div class="movie-placeholder">
+        <div class="movie-placeholder-icon">▶</div>
+        <div class="movie-placeholder-text">採用動画は近日公開予定です</div>
+      </div>
+    </div>
+
+    <!-- 公開時はこの上のプレースホルダー <div> を、以下に差し替え：
+    <div class="movie-frame reveal">
+      <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" title="カトウ塗装工業 採用動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    -->
   </div>
 </section>
 
